@@ -152,6 +152,11 @@ body.contact-page .contact-section {
     border-radius: 15px;
 }
 
+.contact-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 /* Contact Form */
 body.contact-page .contact-section form {
     display: flex;
