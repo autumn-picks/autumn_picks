@@ -1,4 +1,4 @@
-/* Base styles */
+/* Global Styles */
 body {
     font-family: 'Comfortaa', sans-serif;
     margin: 0;
@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background: linear-gradient(90deg, #ffb47c, #ff7e5f);
+    background: linear-gradient(90deg, #ff9a76, #ffc59b); /* fall gradient */
     color: white;
     padding: 2rem 1rem;
     text-align: center;
@@ -33,44 +33,17 @@ header nav a:hover {
     opacity: 0.8;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #333;
-    color: white;
-    margin-top: auto;
-}
-
-/* Buttons */
-.affiliate-btn {
-    font-family: 'Comfortaa', sans-serif;
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    background: #ff7e5f;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: background 0.3s;
-    cursor: pointer;
-}
-
-.affiliate-btn:hover {
-    background: #ffb47c;
-}
-
-/* Catalogue page */
-body.catalogue-page main {
+main {
     flex: 1;
 }
 
+/* Catalogue Section */
 .catalogue {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 4rem 2rem;
-    background-color: #fffaf7;
+    background-color: #fefefe;
     background-image: repeating-linear-gradient(
         135deg,
         #fffaf7,
@@ -80,7 +53,7 @@ body.catalogue-page main {
     );
 }
 
-/* Catalogue items */
+/* Items */
 .item {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
@@ -112,13 +85,61 @@ body.catalogue-page main {
     margin-bottom: 1rem;
 }
 
-/* Contact page */
-body.contact-page main {
-    flex: 1;
+.affiliate-btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: #ff7e5f;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.3s;
+    cursor: pointer;
+    font-family: 'Comfortaa', sans-serif;
 }
 
-.contact-section {
-    padding: 4rem 2rem;
+.affiliate-btn:hover {
+    background: #feb47b;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #333;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .catalogue {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .catalogue {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+
+    .item {
+        padding: 1rem;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Contact Page Specific */
+body.contact-page .contact-section {
     background-color: #fffaf7;
     background-image: repeating-linear-gradient(
         135deg,
@@ -127,18 +148,11 @@ body.contact-page main {
         #fff3eb 50px,
         #fff3eb 100px
     );
-    min-height: calc(100vh - 8rem); /* ensures background fills page */
-}
-
-.contact-section form {
-    background: rgba(255,255,255,0.95);
+    padding: 4rem 2rem;
     border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
-/* Thank-you wrapper */
-.thank-you-wrapper {
+body.contact-page .thank-you-wrapper {
     background-color: #fffaf7;
     flex: 1;
     display: flex;
@@ -146,30 +160,16 @@ body.contact-page main {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    text-align: center;
 }
 
-.thank-you-wrapper h2 {
+.thank-you-message h2 {
     font-size: 2rem;
     color: #ff7e5f;
     margin-bottom: 1rem;
 }
 
-.thank-you-wrapper p {
+.thank-you-message p {
     font-size: 1rem;
     color: #555;
     margin-bottom: 2rem;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .catalogue {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .catalogue {
-        grid-template-columns: 1fr;
-    }
 }
