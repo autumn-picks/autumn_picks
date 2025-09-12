@@ -8,6 +8,22 @@ body {
     color: #333;
 }
 
+/* Page-specific background */
+body.catalogue-page,
+body.contact-page {
+    background-color: #fffaf7;
+    background-image: repeating-linear-gradient(
+        135deg,
+        #fffaf7,
+        #fffaf7 50px,
+        #fff3eb 50px,
+        #fff3eb 100px
+    );
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+/* Header */
 header {
     background: linear-gradient(90deg, #ffb47c, #ff7e5f);
     color: white;
@@ -70,14 +86,6 @@ body.catalogue-page main {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 4rem 2rem;
-    background-color: #fffaf7;
-    background-image: repeating-linear-gradient(
-        135deg,
-        #fffaf7,
-        #fffaf7 50px,
-        #fff3eb 50px,
-        #fff3eb 100px
-    );
 }
 
 /* Catalogue items */
@@ -115,18 +123,14 @@ body.catalogue-page main {
 /* Contact page */
 body.contact-page main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-section {
     padding: 4rem 2rem;
-    background-color: #fffaf7;
-    background-image: repeating-linear-gradient(
-        135deg,
-        #fffaf7,
-        #fffaf7 50px,
-        #fff3eb 50px,
-        #fff3eb 100px
-    );
+    display: flex;
+    justify-content: center;
 }
 
 .contact-section form {
@@ -134,11 +138,12 @@ body.contact-page main {
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    max-width: 500px;
+    width: 100%;
 }
 
 /* Thank-you wrapper */
 .thank-you-wrapper {
-    background-color: #fffaf7;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -170,5 +175,23 @@ body.contact-page main {
 @media (max-width: 768px) {
     .catalogue {
         grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+
+    .contact-section form {
+        padding: 1.5rem;
     }
 }
