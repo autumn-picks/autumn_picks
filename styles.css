@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background: linear-gradient(90deg, #ff9a76, #ffc59b); /* fall gradient */
+    background: linear-gradient(90deg, #ff9a76, #ffc59b); /* cozy fall gradient */
     color: white;
     padding: 2rem 1rem;
     text-align: center;
@@ -152,6 +152,36 @@ body.contact-page .contact-section {
     border-radius: 15px;
 }
 
+/* Contact Form */
+body.contact-page .contact-section form {
+    display: flex;
+    flex-direction: column; /* stack fields vertically */
+    gap: 1rem; /* spacing between fields */
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    max-width: 600px; /* prevent stretching too wide */
+    margin: 2rem auto; /* center horizontally */
+}
+
+body.contact-page .contact-section form label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+body.contact-page .contact-section form input,
+body.contact-page .contact-section form textarea {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Thank-you message wrapper */
 body.contact-page .thank-you-wrapper {
     background-color: #fffaf7;
     flex: 1;
@@ -172,4 +202,10 @@ body.contact-page .thank-you-wrapper {
     font-size: 1rem;
     color: #555;
     margin-bottom: 2rem;
+}
+
+.thank-you-message .affiliate-btn {
+    font-family: 'Comfortaa', sans-serif;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
 }
