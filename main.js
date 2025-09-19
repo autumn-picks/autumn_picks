@@ -52,18 +52,18 @@
         function redirectToStore(product) {
             // In a real implementation, these would be your affiliate links
             const affiliateLinks = {
-                smartphone: 'https://example-store.com/smartphone?ref=yourcode',
-                laptop: 'https://example-store.com/laptop?ref=yourcode',
-                headphones: 'https://example-store.com/headphones?ref=yourcode',
-                smartwatch: 'https://example-store.com/smartwatch?ref=yourcode',
-                camera: 'https://example-store.com/camera?ref=yourcode',
-                monitor: 'https://example-store.com/monitor?ref=yourcode',
-                console: 'https://example-store.com/console?ref=yourcode',
-                speaker: 'https://example-store.com/speaker?ref=yourcode',
-                ssd: 'https://example-store.com/ssd?ref=yourcode',
-                mouse: 'https://example-store.com/mouse?ref=yourcode',
-                keyboard: 'https://example-store.com/keyboard?ref=yourcode',
-                powerbank: 'https://example-store.com/powerbank?ref=yourcode'
+                candles: 'https://example-store.com/candles?ref=yourcode',
+                blanket: 'https://example-store.com/blanket?ref=yourcode',
+                mugs: 'https://example-store.com/mugs?ref=yourcode',
+                wreath: 'https://example-store.com/wreath?ref=yourcode',
+                slippers: 'https://example-store.com/slippers?ref=yourcode',
+                diffuser: 'https://example-store.com/diffuser?ref=yourcode',
+                pillow: 'https://example-store.com/pillow?ref=yourcode',
+                lights: 'https://example-store.com/lights?ref=yourcode',
+                bathbombs: 'https://example-store.com/bathbombs?ref=yourcode',
+                tea: 'https://example-store.com/tea?ref=yourcode',
+                lantern: 'https://example-store.com/lantern?ref=yourcode',
+                potpourri: 'https://example-store.com/potpourri?ref=yourcode'
             };
             
             // For demo purposes, show an alert
