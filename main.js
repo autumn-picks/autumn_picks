@@ -180,23 +180,6 @@ function redirectToStore(product) {
     }
 }
 
-/* Newsletter signup (keeps original behavior) */
-function handleNewsletter(event) {
-    event.preventDefault();
-    const email = event.target.querySelector('.newsletter-input').value;
-    const button = event.target.querySelector('.newsletter-btn');
-
-    button.innerHTML = '<span class="loading"></span>';
-    button.disabled = true;
-
-    setTimeout(() => {
-        alert(`Thank you for subscribing with ${email}! You'll receive our autumn newsletter soon.`);
-        event.target.reset();
-        button.innerHTML = 'Subscribe';
-        button.disabled = false;
-    }, 1500);
-}
-
 /* Contact form handling — now sends via EmailJS */
 function handleContact(event) {
     event.preventDefault();

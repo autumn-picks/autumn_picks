@@ -368,45 +368,6 @@ nav.scrolled {
     margin-bottom: 1.5rem;
 }
 
-/* Newsletter signup */
-.newsletter {
-    background: #F5F5DC;
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.newsletter-form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.newsletter-input {
-    flex: 1;
-    padding: 1rem;
-    border: 2px solid #e9ecef;
-    border-radius: 25px;
-    font-size: 1rem;
-}
-
-.newsletter-btn {
-    padding: 1rem 2rem;
-    background: #D2691E;
-    color: #F5F5DC;
-    border: none;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.newsletter-btn:hover {
-    background: #8B4513;
-    transform: translateY(-2px);
-}
-
 /* Contact Section */
 .contact {
     padding: 5rem 2rem;
@@ -550,11 +511,6 @@ footer {
     .mobile-menu-toggle {
         display: block;
     }
-
-    .newsletter-form {
-        flex-direction: column;
-    }
-}
 
 /* Back to top button */
 .back-to-top {
