@@ -1,3 +1,6 @@
+/* (Paste the whole CSS here exactly as in your earlier block) */
+
+/* Global reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,23 +14,20 @@ body {
     overflow-x: hidden;
 }
 
-/* =======================
-   Navigation
-   ======================= */
+/* Navigation */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #3A2C2A;       /* deep espresso brown */
+    background: #3A2C2A;
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
     transition: all 0.3s ease;
 }
 
-
 nav.scrolled {
-    background: #2E2220;       /* slightly deeper when scrolled */
+    background: #2E2220;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -57,17 +57,26 @@ nav.scrolled {
 
 .nav-links a {
     text-decoration: none;
-    color: #FBE9D0;            /* warm cream text */
+    color: #FBE9D0;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #FFB070;            /* peachy hover */
+    color: #FFB070;
 }
-/* =======================
-   Hero Section
-   ======================= */
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #FBE9D0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
 .hero {
     height: 100vh;
     background: linear-gradient(135deg, #8B4513 0%, #A0522D 30%, #CD853F 60%, #DEB887 100%);
@@ -100,11 +109,7 @@ nav.scrolled {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(
-        ellipse at center,
-        transparent 0%,
-        rgba(139, 69, 19, 0.3) 100%
-    );
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(139, 69, 19, 0.3) 100%);
     pointer-events: none;
 }
 
@@ -164,9 +169,7 @@ nav.scrolled {
     box-shadow: 0 10px 25px rgba(139, 69, 19, 0.4);
 }
 
-/* =======================
-   Products Section
-   ======================= */
+/* Products Section */
 .products {
     padding: 5rem 2rem;
     max-width: 1200px;
@@ -190,6 +193,31 @@ nav.scrolled {
     font-size: 1.1rem;
 }
 
+/* Enhanced product filter */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    background: #F5F5DC;
+    border: 2px solid #D2691E;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #D2691E;
+    color: #F5F5DC;
+}
+
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -206,6 +234,7 @@ nav.scrolled {
     opacity: 0;
     transform: translateY(50px);
     border: 1px solid rgba(205, 133, 63, 0.2);
+    position: relative;
 }
 
 .product-card.visible {
@@ -213,9 +242,38 @@ nav.scrolled {
     transform: translateY(0);
 }
 
+.product-card.hidden {
+    display: none;
+}
+
 .product-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(139, 69, 19, 0.25);
+}
+
+/* New wishlist button */
+.wishlist-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.wishlist-btn:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+.wishlist-btn.favorited {
+    color: #ff4757;
 }
 
 .product-image {
@@ -286,9 +344,7 @@ nav.scrolled {
     box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
 }
 
-/* =======================
-   About Section
-   ======================= */
+/* About Section */
 .about {
     background: linear-gradient(135deg, #D2691E 0%, #B8860B 100%);
     color: #F5F5DC;
@@ -312,9 +368,46 @@ nav.scrolled {
     margin-bottom: 1.5rem;
 }
 
-/* =======================
-   Contact Section
-   ======================= */
+/* Newsletter signup */
+.newsletter {
+    background: #F5F5DC;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+.newsletter-btn {
+    padding: 1rem 2rem;
+    background: #D2691E;
+    color: #F5F5DC;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background: #8B4513;
+    transform: translateY(-2px);
+}
+
+/* Contact Section */
 .contact {
     padding: 5rem 2rem;
     background: #F5F5DC;
@@ -380,11 +473,9 @@ nav.scrolled {
     box-shadow: 0 10px 25px rgba(139, 69, 19, 0.4);
 }
 
-/* =======================
-   Footer
-   ======================= */
+/* Footer */
 footer {
-    background: #3A2C2A;       /* match header for consistency */
+    background: #3A2C2A;
     color: #FBE9D0;
     padding: 3rem 2rem 1rem;
     text-align: center;
@@ -405,6 +496,7 @@ footer {
 
 .footer-links a {
     color: #FBE9D0;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
@@ -412,26 +504,7 @@ footer {
     color: #FFB070;
 }
 
-/* =======================
-   Responsive
-   ======================= */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-links {
-        display: none;
-    }
-}
-
-/* =======================
-   Scroll Indicator
-   ======================= */
+/* Scroll Indicator */
 .scroll-indicator {
     position: fixed;
     top: 0;
@@ -447,4 +520,82 @@ footer {
     background: linear-gradient(90deg, #8B4513, #D2691E);
     width: 0%;
     transition: width 0.1s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #3A2C2A;
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #D2691E;
+    color: #F5F5DC;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-size: 1.5rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #8B4513;
+    transform: translateY(-5px);
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
