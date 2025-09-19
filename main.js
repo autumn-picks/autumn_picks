@@ -88,3 +88,29 @@ window.addEventListener('scroll', () => {
         rgba(205,133,63,1) ${60 + scrollPercent*20}%, 
         rgba(222,184,135,1) ${100 + scrollPercent*20}%)`;
 });
+
+// EmailJS contact form handling
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+
+    if (form) {
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            emailjs.sendForm(
+                "service_autumnpicks",    // e.g. "service_abcd123"
+                "template_autumnpicks",   // e.g. "template_contact"
+                this
+            ).then(
+                function() {
+                    alert("✅ Message sent successfully!");
+                    form.reset();
+                },
+                function(error) {
+                    console.error("❌ Failed...", error);
+                    alert("Something went wrong. Please try again later.");
+                }
+            );
+        });
+    }
+});

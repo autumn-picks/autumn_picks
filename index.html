@@ -214,7 +214,7 @@
                 Have questions about creating the perfect cozy space? We'd love to help!
             </p>
 
-            <form class="contact-form">
+            <form id="contact form" class="contact-form">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -253,5 +253,16 @@
     </footer>
 
     <script src="main.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "7KQuW5X1_C_EpK51l",
+            });
+        })();
+    </script>
+
 </body>
 </html>
