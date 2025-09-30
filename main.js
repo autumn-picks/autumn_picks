@@ -83,65 +83,10 @@ document.querySelectorAll('.product-card').forEach(card => {
     observer.observe(card);
 });
 
-/* Product filtering */
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        // Update active button
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-
-        const filter = this.getAttribute('data-filter');
-        const cards = document.querySelectorAll('.product-card');
-
-        cards.forEach(card => {
-            if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                card.classList.remove('hidden');
-                card.style.display = 'block';
-            } else {
-                card.classList.add('hidden');
-                card.style.display = 'none';
-            }
-        });
-    });
-});
-
-/* Wishlist functionality (localStorage) */
-let wishlist = JSON.parse(localStorage.getItem('autumnWishlist') || '[]');
-
-function toggleWishlist(button) {
-    const card = button.closest('.product-card');
-    const productTitle = card.querySelector('.product-title').textContent;
-
-    if (button.classList.contains('favorited')) {
-        button.classList.remove('favorited');
-        button.textContent = '♡';
-        wishlist = wishlist.filter(item => item !== productTitle);
-    } else {
-        button.classList.add('favorited');
-        button.textContent = '♥';
-        wishlist.push(productTitle);
-    }
-
-    localStorage.setItem('autumnWishlist', JSON.stringify(wishlist));
-}
-
-/* Load wishlist on page load */
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.product-card').forEach(card => {
-        const productTitle = card.querySelector('.product-title').textContent;
-        const wishlistBtn = card.querySelector('.wishlist-btn');
-
-        if (wishlist.includes(productTitle) && wishlistBtn) {
-            wishlistBtn.classList.add('favorited');
-            wishlistBtn.textContent = '♥';
-        }
-    });
-});
-
 /* Product redirect function (robust trigger handling for button loading states) */
 function redirectToStore(product) {
     const affiliateLinks = {
-        candles: 'https://example-store.com/candles?ref=yourcode',
+        candles: 'https://amzn.to/4o0Hcz3',
         blanket: 'https://example-store.com/blanket?ref=yourcode',
         mugs: 'https://example-store.com/mugs?ref=yourcode',
         wreath: 'https://example-store.com/wreath?ref=yourcode',

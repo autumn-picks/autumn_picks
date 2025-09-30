@@ -277,13 +277,19 @@ nav.scrolled {
 
 .product-image {
     height: 200px;
-    background: linear-gradient(135deg, #CD853F 0%, #D2691E 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
     position: relative;
     overflow: hidden;
+}
+
+
+.product-image img {
+    height: 100%;
+    width: auto;
+    object-fit: contain; /* or 'cover' if you want it to fill the space */
 }
 
 .product-image::before {
